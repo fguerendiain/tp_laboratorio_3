@@ -9,7 +9,7 @@
 
     $arrayUno = array(rand(1,15),rand(1,15),rand(1,15),rand(1,15),rand(1,15));
 
-    echo("Array Uno: ");
+    echo("<h1>Array Uno: </h1>");
     var_dump($arrayUno); //muestra el contenido del array
 
     echo("<br><br>");
@@ -22,7 +22,7 @@
         $arrayDos[$i] = rand(11,20);
     };
 
-    echo("Array Dos: ");
+    echo("<h1>Array Dos: </h1>");
     var_dump($arrayDos);
 
     echo("<br><br>");
@@ -35,13 +35,9 @@
         array_push($arrayTres,rand(21,30));
     };
 
-    echo("Array Tres: ");
+    echo("<h1>Array Tres: </h1>");
     var_dump($arrayTres);
 
     echo("<br><br>");
-
-
-
-
 
 ?>
