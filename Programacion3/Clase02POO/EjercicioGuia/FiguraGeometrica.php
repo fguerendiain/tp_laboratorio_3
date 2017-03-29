@@ -6,7 +6,7 @@
         protected $_perimetro; //double
         protected $_superficie; //doubleval
 
-        function __construct(){
+        public function __construct(){
             $this->_color = "verde";
         }
 
