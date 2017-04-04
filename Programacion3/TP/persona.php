@@ -31,7 +31,7 @@
 
         public function getSexo()
         {
-            switch($this->sexo)
+            switch($this->_sexo)
             {
                 case "m" : 
                     return 0;
