@@ -1,0 +1,90 @@
+h1,h2{
+    color:#0000FF; /*color de fuente*/
+    font-family: Courier New, Courier, monospace;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 130; /*espesor de la fuente*/
+    background-color: #000000;
+    border-color: #055544;
+    border-width: 50px;
+    display: inline;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: underline; /*subrrayado*/
+    text-decoration: line-through; /*tachado*/
+    text-decoration: overline; /*subrrayado superior*/
+    letter-spacing: 5px; /*Distancia entre letras*/
+    word-spacing: 10px; /*Distancia entre palabras*/
+    text-transform: capitalize; /*Letra capital para cada palabra*/
+    text-transform: uppercase; /*transforma todas las letras a mayuscula*/
+    opacity: 0.8;
+}
+
+body{
+    background-color: #707070;
+    background-image: url("../img/img1.jpg");
+    
+}
+
+.vistoso{   /*por CLASS, se declara con un anteponiendo . */
+    background-color: #00FF00;
+    color: #FF0000;
+    opacity: 0.8;
+}
+
+#parrafoUnico{ /*por ID, se declara con un anteponiendo # */
+    background-color: #FF00FF;
+    color: #00FF00;
+    opacity: 0.8;
+}
+
+.elParrafo{
+    border-width: 7px;
+    border-color: #00FF00;
+    border-style: dotted;
+    text-align: center;
+    background-color: #000000;
+    color:#ffffff;
+    padding: 5px 30px,;
+    margin: 10px 150px;
+    opacity: 0.8;
+}
+
+*{    /*Selector universal, afecta el default para toda la pagina*/
+
+
+}
+
+p span{
+    color:red;
+}
+
+h1 + p{ /*Selector hermano adyasente (Al primer parrafo que este al lado de un h1 se le aplicara la regla)*/
+    color:yellow;
+
+}
+
+p ~ p{ /*Selector hermano general (El parrafo que este siguiente a otro parrafo) */
+    color:blue;
+}
+
+a:visited{
+    color: red;
+
+}
+
+p:hover{
+    background-color: blue;
+
+}
+
+a:active{
+    background-color: black;
+
+}
+
+textarea:focus{
+    background-color: black;
+
+}
