@@ -13,7 +13,7 @@
 
         public function AgregarEmpleado($persona)
         {
-//            $this_empleados = EliminarEmpleadosRepetidos();
+     //       EliminarEmpleadosRepetidos();
             if(array_push($this->_empleados,$persona))
             {
                 return true;
@@ -42,7 +42,7 @@
 
         private function EliminarEmpleadosRepetidos()
         {  
-            return array_unique($this->_empleados);
+            array_unique($this->_empleados);
         }
 
         public function __toString()
@@ -65,7 +65,7 @@
            fwrite($archivo, "\r\n");
            for($i=0;$i < count($this->_empleados) ; $i++)
            {
-               fwrite($archivo,$this->_empleados[$i]->__toString());
+               fwrite($archivo,$this->_empleados[$i]);
                fwrite($archivo, "\r\n");
            }
 
@@ -79,10 +79,25 @@
                crear obj 
                agregar obj al array
                */
-/*
-           $archivo = fopen("fabrica.txt","w");
-           fgets($archivo,)
-           fclose($archivo);
-*/        }
+
+           $archivo = fopen("fabrica.txt","r");
+
+           $auxFab = new Fabrica(fgets($archivo));
+           while(!feof($archivo))
+           {
+              $auxEmpleado = explode(" - ",fgets($archivo));
+              $auxFab->_empleados = new Empleado($auxEmpleado[0],$auxEmpleado[1],$auxEmpleado[2],$auxEmpleado[3],$auxEmpleado[4],$auxEmpleado[5]);
+           }
+
+     /*      for($i=0 ; $i<count($auxFab) ; $i++)
+           {
+               echo($auxFab[$i]);
+           }
+
+       */    fclose($archivo);
+
+            return $auxFab;
+
+        }
     }
 ?>

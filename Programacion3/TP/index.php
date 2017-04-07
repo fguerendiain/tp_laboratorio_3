@@ -2,6 +2,8 @@
     include_once "empleado.php";
     include_once "fabrica.php";
 
+    $FabLeida = Fabrica::RecuperarDatos();
+/*
     $emp1 = new Empleado("Carlos", "Villagran", 31757094, 'm' , 1234, 16000);
     $emp2 = new Empleado("Florencia", "Luque", 5132456, 'f' , 1235, 17000);
     $emp3 = new Empleado("Franco", "Rogan", 45987654, 'm' , 1236, 16000);
@@ -43,7 +45,7 @@
     echo("Sueldo Total: " . $fab->CalcularSueldos());
     echo("<br>");
     echo($fab);
-
+*/
     $fab->GuardarFabrica();
     
 
