@@ -11,6 +11,11 @@
             $this->_razonSocial = $razonSocial;
         }
 
+        public function GetRazonSocial()
+        {
+            return $this->_razonSocial;
+        }
+
         public function AgregarEmpleado($persona)
         {
      //       EliminarEmpleadosRepetidos();
@@ -55,48 +60,52 @@
            return $stringFabrica;
         }
 
-        public function GuardarFabrica()
+        public function GuardarFabrica($archivoGuardar)
         {
             /* Transformar obj a String + separador
                 Guardar un obj por renglon */
-
-           $archivo = fopen("fabrica.txt","w");
-           fwrite($archivo, $this->_razonSocial);
-           fwrite($archivo, "\r\n");
+            $archivoGuardar += $archivoGuardar . ".txt";
+           $archivo = fopen($archivoGuardar,"w");
+           $cont = 0;
            for($i=0;$i < count($this->_empleados) ; $i++)
            {
-               fwrite($archivo,$this->_empleados[$i]);
-               fwrite($archivo, "\r\n");
+               if(isset($this->_empleados[$i]))
+               {
+                   fwrite($archivo,$this->_empleados[$i]->__toString());
+                   $cont++;
+               }
+               echo("contador" .$cont);
            }
 
            fclose($archivo);
         }
 
-        public function RecuperarDatos()
+        public function RecuperarDatos($archivoLeer)
         {
             /* Leer renglon por renglon
                utilizar EXPLODE
                crear obj 
                agregar obj al array
                */
+           $archivoLeer += $archivoLeer . ".txt";
 
-           $archivo = fopen("fabrica.txt","r");
+           $archivo = fopen($archivoLeer,"r");
 
-           $auxFab = new Fabrica(fgets($archivo));
            while(!feof($archivo))
            {
-              $auxEmpleado = explode(" - ",fgets($archivo));
-              $auxFab->_empleados = new Empleado($auxEmpleado[0],$auxEmpleado[1],$auxEmpleado[2],$auxEmpleado[3],$auxEmpleado[4],$auxEmpleado[5]);
+                if(PHP_EOL)
+                {
+                    echo("TERMINO<br>");
+                    break;
+                }
+
+                $linea = fgets($archivo);
+                $auxEmpleado = explode(" - ",$linea);
+                $array = new Empleado($auxEmpleado[0],$auxEmpleado[1],$auxEmpleado[2],$auxEmpleado[3],$auxEmpleado[4],$auxEmpleado[5]);
+                $this->AgregarEmpleado($array);
+               echo("Datos leidos y cargados<br>");
            }
-
-     /*      for($i=0 ; $i<count($auxFab) ; $i++)
-           {
-               echo($auxFab[$i]);
-           }
-
-       */    fclose($archivo);
-
-            return $auxFab;
+           fclose($archivo);
 
         }
     }
