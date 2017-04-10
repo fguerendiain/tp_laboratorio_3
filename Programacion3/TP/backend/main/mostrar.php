@@ -20,10 +20,11 @@
            }
            fclose($archivo);
 
+
            for($i=0 ; $i < count($empleados) ; $i++)
            {
-               echo($empleados[$i] . "<br>");
+               echo($empleados[$i] . "<br><img src='" . $empleados[$i]->getPathFoto() . "'><br><br>");
            }
-
+        
 
 ?>

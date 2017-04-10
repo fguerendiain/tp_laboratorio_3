@@ -20,17 +20,15 @@
     if(!$recLegajo = $_POST['txtLegajo'])$flag = false;
     if(!$recSueldo = $_POST['txtSueldo'])$flag = false;
 
-    $target_dir = "../../fotos/";
-    $target_file = $target_dir . basename($_FILES['btnProfilePic']["name"]);
-    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
-    var_dump($_FILES['btnProfilePic']);
-    echo($_FILES['btnProfilePic']['error']);
+    $target_dir = "../../fotos/";
+    $target_file = $target_dir . basename($_FILES["btnProfilePic"]["name"]);
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"]))
     {
-        $check = getimagesize($_FILES['btnProfilePic']["tmp_name"]);
+        $check = getimagesize($_FILES["btnProfilePic"]["tmp_name"]);
         if($check !== false)
         {
             echo "El archivo es una imagen - " . $check["mime"] . ".";
@@ -48,7 +46,7 @@
         $flag = false;
     }
     // Check file size
-    if ($_FILES['btnProfilePic']["size"] > 1*MB)
+    if ($_FILES["btnProfilePic"]["size"] > 1048576)
     {
         echo "El archivo es demasiado grande.";
         $flag = false;
@@ -57,15 +55,15 @@
     if($imageFileType != "jpg" && $imageFileType != "bmp" && $imageFileType != "gif"
     && $imageFileType != "png" && $imageFileType != "jpeg")
     {
-        echo "Unicamente se aceptan los siguientes formatos: JPG - BMP - JPEG - PNG - GIF";
+        echo ("Unicamente se aceptan los siguientes formatos: JPG - BMP - JPEG - PNG - GIF");
         $flag = false;
     }
 
     if($flag)
     {
-        if (move_uploaded_file($_FILES['btnProfilePic']["tmp_name"], $target_file))
+        if (move_uploaded_file($_FILES["btnProfilePic"]["tmp_name"], $target_file))
         {
-            echo "El archivo ". basename( $_FILES['btnProfilePic']["name"]). " se guardo correctamente.";
+            echo "El archivo ". basename( $_FILES["btnProfilePic"]["name"]). " se guardo correctamente.";
         }
         else
         {
