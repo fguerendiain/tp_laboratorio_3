@@ -7,7 +7,7 @@
 <body>
     <h3>CARGA DE EMPLEADOS</h3>
 
-    <form action="administracion.php" method="POST">
+    <form action="backend/main/administracion.php" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
                 <td><label for="txtNombre">Nombre: </label></td>
@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <td><label>Subir Foto: </label></td>
-                <td><button type="button" name="btnProfilePic">...</button><td>
+                <td><input type="file" name"btnProfilePic" id="fileFoto" value="..." accept="image/jpg, image/bmp, image/gif, image/png, image/jpeg"></td>
             </tr>
             <tr>
                 <td></td>

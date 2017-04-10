@@ -1,9 +1,9 @@
 <?php
-    include_once "empleado.php";
-    include_once "fabrica.php";
+    include_once "../class/empleado.php";
+    include_once "../class/fabrica.php";
 
            $empleados = array();
-           $archivo = fopen("empleados.txt","r");
+           $archivo = fopen("../../exports/empleados.txt","r");
 
            while(!feof($archivo))
            {

@@ -1,6 +1,6 @@
 <?php
-    include_once "empleado.php";
-    include_once "fabrica.php";
+    include_once "../class/empleado.php";
+    include_once "../class/fabrica.php";
 
     $emp1 = new Empleado("Carlos", "Villagran", 31757094, 'm' , 1234, 16000);
     $emp2 = new Empleado("Florencia", "Luque", 5132456, 'f' , 1235, 17000);
