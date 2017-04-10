@@ -4,6 +4,7 @@
     {
         private $_legajo; //int
         private $_sueldo; //double
+        private $_pathFoto;
 
         public function __construct($nombre,$apellido,$dni,$sexo,$legajo,$sueldo)
         {
@@ -22,14 +23,24 @@
             return $this->_sueldo;
         }
 
-        function Hablar($idioma)
+        public function getPathFoto()
+        {
+            return $this->_pathFoto;
+        }
+
+        public function setPathFoto($pathFoto)
+        {
+            $this->_pathFoto = $pathFoto;
+        }
+
+        public function Hablar($idioma)
         {
             return "El empleado habla ".$idioma;
         }
 
         public function __toString()
         {
-            return parent::__toString() . " - " . $this->_legajo . " - " . $this->_sueldo;
+            return parent::__toString() . "-" . $this->_legajo . "-" . $this->_sueldo . "-" . $this->_pathFoto . PHP_EOL;
         }
 
     }

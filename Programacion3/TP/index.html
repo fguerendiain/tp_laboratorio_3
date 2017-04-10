@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TP1 - Programacion 3</title>
+</head>
+<body>
+    <h3>CARGA DE EMPLEADOS</h3>
+
+    <form action="administracion.php" method="POST">
+        <table>
+            <tr>
+                <td><label for="txtNombre">Nombre: </label></td>
+                <td><input type="text" name="txtNombre" id="txtNombre" placeholder="Ingrese Nombre"></td>
+            </tr>
+            <tr>
+                <td><label for="txtApellido">Apellido: </label></td>
+                <td><input type="text" name="txtApellido" id="txtApellido" placeholder="Ingrese Apellido"></td>
+            </tr>
+            <tr>
+                <td><label for="txtDni">Dni: </label></td>
+                <td><input type="text" name="txtDni" id="txtDni" placeholder="Ingrese DNI"></td>
+            </tr>
+            <tr>
+                <td><label>Masculino</label></td>
+                <td><input type="radio" name="rdBtnSexo" id"" value="m"></td>
+            </tr>
+            <tr>
+                <td><label>Femenino</label></td>
+                <td><input type="radio" name="rdBtnSexo" id="" value="f"></td>
+            </tr>
+            <tr>
+                <td><label for="txtLegajo">Legajo: </label></td>
+                <td><input type="text" name="txtLegajo" id="txtLegajo" placeholder="Ingrese nº de Legajo"></td>
+            </tr>
+            <tr>
+                <td><label for="txtSueldo">Sueldo: </label></td>
+                <td><input type="text" name="txtSueldo" id="txtSueldo" placeholder="Ingrese Sueldo"></td>
+            </tr>
+            <tr>
+                <td><label>Subir Foto: </label></td>
+                <td><button type="button" name="btnProfilePic">...</button><td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Guardar"></td>
+            </tr>
+        </table> 
+    </form>    
+</body>
+</html>
