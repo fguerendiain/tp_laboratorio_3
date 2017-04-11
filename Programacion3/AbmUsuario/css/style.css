@@ -1,0 +1,64 @@
+body{
+    background-color: #212121;
+    
+}
+
+.mainContent{
+    padding: 150px ,50px;
+
+}
+
+h3{
+    text-align: center;
+    padding: 50px;
+    color:#ffffff;
+
+}
+
+.menuTable{
+    margin: auto;
+    background-color: #959595;
+    border-radius: 10px; 
+    
+}
+
+.altaBoton{
+    margin: auto;
+    padding: 5px 50px;
+    text-align: center;
+}
+
+.bajaBoton{
+    margin: auto;
+    padding: 5px 50px;
+    text-align: center;
+}
+
+.modifBoton{
+    margin: auto;
+    padding: 5px 50px;
+    text-align: center;
+}
+
+.menuButton{
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%; 
+    border-color: #000000;
+    border-style: solid;
+    border-width: 3px; 
+
+}
+
+.footer{
+    background-color:darkred; 
+    color: #ffffff;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+
+
+}
