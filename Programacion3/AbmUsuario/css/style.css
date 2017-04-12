@@ -15,35 +15,21 @@ h3{
 
 }
 
-.menuTable{
+.menuBackground{
     margin: auto;
+    padding: 10px;
     background-color: #959595;
     border-radius: 10px; 
     
 }
 
-.altaBoton{
-    margin: auto;
-    padding: 5px 50px;
-    text-align: center;
-}
-
-.bajaBoton{
-    margin: auto;
-    padding: 5px 50px;
-    text-align: center;
-}
-
-.modifBoton{
-    margin: auto;
-    padding: 5px 50px;
-    text-align: center;
-}
+.lableButton{
+    margin: 0 auto;
+    text-align: center;}
 
 .menuButton{
     width: 100px;
     margin: 0 auto;
-    border-radius: 50%; 
     border-color: #000000;
     border-style: solid;
     border-width: 3px; 
@@ -61,4 +47,12 @@ h3{
     padding: 1rem;
 
 
+}
+
+.userTableBackground{
+    margin: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    background-color: #959595;
+    border-radius: 10px; 
 }

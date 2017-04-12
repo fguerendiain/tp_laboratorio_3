@@ -2,43 +2,44 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Abm de Usuarios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+
+    <title>Abm de Usuarios</title>
+
 </head>
 <body>
-    <div class="mainContent">
+    <div class="container">
         <h3>ADMINISTRADOR DE USUARIOS</h3>
-        <table class="menuTable">
-            <tr>
-                <td><div class="altaBoton"><label for="menuButtonAlta"></label>ALTA</div></td>
-                <td><div class="bajaBoton"><label for="menuButtonBaja"></label>BAJA</div></td>
-                <td><div class="modifBoton"><label for="menuButtonModif"></label>MODIFICACION</div></td>
-            </tr>
-            <tr>
-                <td><div class="altaBoton"><a href="views/alta.html"><img name="menuButtonAlta" class="menuButton" src="img/altaButton.jpg"></a></div></td>
-                <td><div class="bajaBoton"><a href="views/baja.html"><img name="menuButtonBaja" class="menuButton" src="img/bajaButton.jpg"></a></div></td>
-                <td><div class="modifBoton"><a href="views/modificacion.html"><img name="menuButtonModif" class="menuButton" src="img/modifButton.jpg"></a></div></td>
-            </tr>
-        </table>
-    </div>
-    <div class="footer">
-        <table>
-            <tr>
-                <td>ALUMNO:</td>
-                <td>Franco Guerendiain</td>
-            </tr>
-            <tr>
-                <td>MATERIA:</td>
-                <td>Programacion3 / Laboratorio3</td>
-
-            </tr>
-            <tr>
-                <td>PROYECTO:</td>
-                <td>ABM de Usuarios</td>
-
-            </tr>
-            
-        </table>
+        <div class="menuBackground">
+            <div class="row">
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><label for="menuButtonAlta"></label>ALTA</div>
+                <div class="col-xs-3 col-md-4 col-sm-4 lableButton"><label for="menuButtonBaja"></label>BAJA</div>
+                <div class="col-xs-5 col-md-4 col-sm-4 lableButton"><label for="menuButtonModif"></label>MODIFICACION</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><a href="views/alta.html"><img name="menuButtonAlta" class="img-responsive img-circle menuButton" src="img/altaButton.jpg"></a></div>
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><a href="views/baja.html"><img name="menuButtonBaja" class="img-responsive img-circle menuButton" src="img/bajaButton.jpg"></a></div>
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><a href="views/modificacion.html"><img name="menuButtonModif" class="img-responsive img-circle menuButton" src="img/modifButton.jpg"></a></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">ALUMNO: </div>
+                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11">Franco Guerendiain</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">MATERIA:</div>
+                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11">Programacion3 / Laboratorio3</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">PROYECTO:</div>
+                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11">ABM de Usuarios</div>
+            </div>
+        </div>
     </div>
     
 </body>
