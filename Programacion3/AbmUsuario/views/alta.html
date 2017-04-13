@@ -1,55 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Abm de Usuarios</title>
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <div class="Container">
-        <h3>ALTA DE USUARIOS</h3>
-        <form action="server.php" method="POST" enctype="multipart/form-data">
-            <table class="menuTable">
-                <tr>
-                    <td><label for="txtLegajo">Nombre: </label></td>
-                    <td><input type="text" name="txtLegajo" placeholder="Ingrese n° Legajo"></td>
-                </tr>
-                <tr>
-                    <td><label for="txtNombre">Nombre: </label></td>
-                    <td><input type="text" name="txtNombre" id="" placeholder="Ingrese Nombre"></td>
-                </tr>
-                <tr>
-                    <td><label for="txtDni">Nombre: </label></td>
-                    <td><input type="text" name="txtDni" id="" placeholder="Ingrese Dni"></td>
-                </tr>
-                <tr>
-                    <td><input type="file"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input type="submit" value="CARGAR EMPLEADO"></td>
-                </tr>
-            </table>
-        </div>
-        <div class="footer">
-            <table>
-                <tr>
-                    <td>ALUMNO:</td>
-                    <td>Franco Guerendiain</td>
-                </tr>
-                <tr>
-                    <td>MATERIA:</td>
-                    <td>Programacion3 / Laboratorio3</td>
-
-                </tr>
-                <tr>
-                    <td>PROYECTO:</td>
-                    <td>ABM de Usuarios</td>
-
-                </tr>
-                
-            </table>
-        </form>
-    </div>
-    
-</body>
-</html>
+<div>
+    <form action="server.php" method="POST" enctype="multipart/form-data">
+        <table class="menuTable">
+            <tr>
+                <td><label for="txtLegajo">Nombre: </label></td>
+                <td><input type="text" name="txtLegajo" placeholder="Ingrese n° Legajo"></td>
+            </tr>
+            <tr>
+                <td><label for="txtNombre">Nombre: </label></td>
+                <td><input type="text" name="txtNombre" id="" placeholder="Ingrese Nombre"></td>
+            </tr>
+            <tr>
+                <td><label for="txtDni">Nombre: </label></td>
+                <td><input type="text" name="txtDni" id="" placeholder="Ingrese Dni"></td>
+            </tr>
+            <tr>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="CARGAR EMPLEADO"></td>
+            </tr>
+        </table>
+    </form>
+</div>
