@@ -1,22 +1,29 @@
-window.onload = function()
+$(document).ready(function()
 {
     var altaURL = "../views/alta.html";
     var bajaURL = "../views/baja.html";
     var modificacionURL = "../views/modificacion.html";
-    var urlPath;
+    var ;
 
-    var altaButtonElement = document.getElementById("menuButtonAlta");
-    var bajaButtonElement = document.getElementById("menuButtonBaja");
-    var modificacionButtonElement = document.getElementById("menuButtonModif");
-    var divView = document.getElementById("actual-view");
+    $("#menuButtonAlta").onclick = function(){
 
-    altaButtonElement.onclick = SolicitarRequest;
-    bajaButtonElement.onclick = SolicitarRequest;
-    modificacionButtonElement.onclick = SolicitarRequest;
+    };
+
+    $("#menuButtonBaja").onclick = function(){
+        
+    };
+
+    $("#menuButtonModif").onclick = function(){
+        
+    };
+
+
+
+
+/*
 
     function SolicitarRequest()
     {
-
         urlPath = altaURL;
         viewRequest = new XMLHttpRequest();
         viewRequest.open('GET',urlPath,true);
@@ -35,8 +42,8 @@ window.onload = function()
             divView.innerHTML = "<h1>cargando...</h1>";
         }
     }
-
-}
+*/
+})
 
 /*    tipo de Request{
         GET 

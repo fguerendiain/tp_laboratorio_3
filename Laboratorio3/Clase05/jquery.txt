@@ -1,0 +1,19 @@
+jquery sintaxys
+
+tiene una forma muy sencilla de acceder a los alementos del DOM (estructyura de html)
+
+para traer referencias
+
+todos los metodos empiezan con $(elemento a acceder)
+
+$(document).redy (al estar cargado el documento)
+
+
+function(){} "funcion anonima se declara donde se va a utilizar"
+
+jquey utiliza los mismos selectores que ccs
+# para ID     $("#btnEnviar")
+. para class  $(".btnEnviar")
+
+$.ajax 
+
