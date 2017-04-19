@@ -3,20 +3,23 @@ $(document).ready(function()
     var altaURL = "../views/alta.html";
     var bajaURL = "../views/baja.html";
     var modificacionURL = "../views/modificacion.html";
-    var ;
 
-    $("#menuButtonAlta").onclick = function(){
+    var loadContent = function(url){
+        $.ajax(url).done(function(data) {
+            $("#actualView").html(data);
+        });
+    }
 
-    };
+    $("#menuButtonAlta").click(function(){
+        loadContent(altaURL);
+    });
 
-    $("#menuButtonBaja").onclick = function(){
-        
-    };
+    $("#menuButtonBaja").click(loadContent(bajaURL));
 
-    $("#menuButtonModif").onclick = function(){
-        
-    };
+    $("#menuButtonModif").click(loadContent(modificacionURL));
 
+
+});
 
 
 
@@ -43,7 +46,6 @@ $(document).ready(function()
         }
     }
 */
-})
 
 /*    tipo de Request{
         GET 
