@@ -41,7 +41,7 @@ $tituloVentana = "PRODUCTOS - con archivos, AJAX y JQUERY";
                                         <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre" class="form-control" />
                                     </div>
                                     <div class="form-group" >
-                                        <input type="file" name="archivo" id="archivo" onchange="subirFoto()" class="form-control" accept=".jpg" />
+                                        <input type="file" name="archivo" id="archivo" onchange="subirFoto()" class="form-control" />
                                     </div>
                                     <div class="form-group">
                                         <input type="button" class="miBotonUTN btn btn-primary btn-block" onclick="agregarProducto()" value="Guardar" />

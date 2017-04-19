@@ -1,0 +1,40 @@
+JSon (Java Script Object Notation)
+
+aparecio para reemplazar a XML
+
+
+Al enviar Request mediante AJAX, el servidor nos repsonde con Response mediante HTTP que nos permite pasar entre el request y el response texto mediante metodos como GET y POST
+
+
+Json es un archivo de texto definido por convencion para ser parseado
+
+(ejemplo de json)
+[ //identifica un array
+    {"atr1": "valor1" , "atr2" : "valor2"} //objeto 1
+    {"atr1" : "valor3" , "atr2" : "valor4"} // objeto2
+]
+
+
+
+Entra en el parcial
+{
+    html
+    css
+    bootstrap
+    javascript
+    Ajax
+    jquery
+}
+
+
+Enviar datos:
+    var myObj = {"nombre" :"Carlos" , "edad":"30"};  //declaro una variable donde guardo un objeto
+    var myJSon = JSon.StringiFy(myObj);  // declaro una variable donde guardo el objeto anteriormente creado en un JSon
+
+Recibir datos:
+
+    //el servidor me responde con el siguiente JSON
+    var myJSon = {"nombre" :"Carlos" , "edad":"30"};
+
+    var myObj = JSon.Parse(myJSon); // lo parseo a un objeto
+

@@ -47,12 +47,12 @@ function subirFoto() {
         async: true
     })
         .done(function (objJson) {
-            if (processData == true) { // completar
+            if (!objJson.Exito) {
                 alert(objJson.Mensaje);
                 return;
-            
+            }
             $("#divFoto").html(objJson.Html);
-}
+
         })
         .fail(function (peticion, textStatus, errorThrown) {
             alert(peticion.responseText + "\n" + textStatus + "\n" + errorThrown);
@@ -79,12 +79,12 @@ function borrarFoto() {
         async: true
     })
         .done(function (objJson) {
-           //completar
-           if(objJson)           {
-                $("#divFoto").html("");
-                $("#hdnArchivoTemp").val("");
-               
-           }
+            if (!objJson.Exito) {
+                alert(objJson.Mensaje);
+                return;
+            }
+            $("#divFoto").html("");
+            $("#hdnArchivoTemp").val("");
 
         })
         .fail(function (peticion, textStatus, errorThrown) {
@@ -108,9 +108,10 @@ function agregarProducto() {
     producto.codBarra = codBarra;
     producto.archivo = archivo;
 
-       // validar campos...
-
-
+    if (!validar(producto)) {
+        alert("Debe completar todos los campos!!!");
+        return;
+    }
 
      $.ajax({
         type: 'POST',
@@ -124,7 +125,12 @@ function agregarProducto() {
     })
         .done(function (objJson) {
 
-         // completar
+            if (!objJson.Exito) {
+                alert(objJson.Mensaje);
+                return;
+            }
+
+            alert(objJson.Mensaje);
 
             borrarFoto();
 
@@ -167,7 +173,12 @@ function eliminarProducto(producto) {
     })
         .done(function (objJson) {
 
-            // completar           
+            if (!objJson.Exito) {
+                alert(objJson.Mensaje);
+                return;
+            }
+
+            alert(objJson.Mensaje);
 
             mostrarGrilla();
 
@@ -176,6 +187,7 @@ function eliminarProducto(producto) {
             alert(jqXHR.responseText + "\n" + textStatus + "\n" + errorThrown);
         });
 }
+
 
 
 function modificarProducto(objJson) {

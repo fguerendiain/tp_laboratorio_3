@@ -17,3 +17,4 @@ jquey utiliza los mismos selectores que ccs
 
 $.ajax 
 
+J

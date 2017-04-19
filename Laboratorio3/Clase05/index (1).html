@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title></title>
+</head>
+<body>
+    <div>
+        <!--<input id="to" type="text" placeholder="Email" />
+        <input id="subject" type="text" placeholder="subject" />
+        <textarea id="content" cols="20" rows="2" placeholder="Write something"></textarea>-->
+        <button id="ajaxGET">Obtener GET</button>
+        <button id="ajaxPOST">Obtener POST</button>
+        <div id="Posts">
+
+        </div>
+        <br /><br /><br /><br />
+        <div>
+            <span>
+                Nombre
+            </span>
+            <input id="txtNombre" /><br />
+            <span>
+                Apellido
+            </span>
+            <input id="txtApellido" /><br />
+            <span>
+                Subir Foto Perfil
+            </span>
+            <input type="file" /><br /><br /><br />
+            <button id="btnAgregarPersona">Agregar Persona</button>
+        </div>
+        
+        <div>
+            <button id="submitJSON">Submitir JSON</button>
+        </div>
+        <div id="JSON">
+
+        </div>
+    </div>
+
+    <script>
+        addEventListener('load', inicializarEventos, false);
+
+        function inicializarEventos() {
+                var buttonGET = document.getElementById('ajaxGET');
+                buttonGET.addEventListener('click', presionBotonGET);
+                var buttonPOST = document.getElementById('ajaxPOST');
+                buttonPOST.addEventListener('click', presionBotonPOST);
+                var buttonJSON = document.getElementById('submitJSON');
+                buttonJSON.addEventListener('click', presionBotonJSON);
+                var btnAgregarPersona = document.getElementById('btnAgregarPersona');
+                btnAgregarPersona.addEventListener('click', agregarPersona);
+        }
+        
+        var request = new XMLHttpRequest();
+        var requestJSON = new XMLHttpRequest();
+        //PRESION Boton GET
+        function presionBotonGET() {
+            //var url = 'http://localhost:1337/getNewPost' + '?cod=' + 1;
+            var url = 'http://utnfralaboiii.azurewebsites.net/getPost' + '?cod=' + 1;        
+            request.open('GET', url, true);
+            request.onreadystatechange = procesarPost;
+            request.send();
+
+        }
+
+        //PRESION Boton POST
+        function presionBotonPOST() {
+            //var url = 'http://localhost:1337/getPost';
+            var url = 'http://utnfralaboiii.azurewebsites.net/getPost';
+            request.open('POST', url, true);
+            request.onreadystatechange = procesarPost;
+            request.send('cod=1');
+
+        }
+
+        var myJSONArray = [{
+            "nombre": "Juan",
+            "edad": 20,
+            "preferencias": ["cine", "tecnologia", "ciencia"]
+        },
+           {
+               "nombre": "Roberto",
+               "edad": 30,
+               "preferencias": ["autos", "ciencia", "politica"]
+           }]
+
+        //PRESION AGREGAR PERSONA
+        function agregarPersona() {
+            var nombre = document.getElementById("txtNombre").value;
+            var apellido = document.getElementById("txtApellido").value;
+            var newObject = {"nombre":nombre,
+                "apellido":apellido,
+                "preferencias": ["autos", "tecnologia", "politica", "ciencia"]
+            }
+            myJSONArray.push(newObject);
+
+        }
+        //PRESION ENLACE POST JSON
+        function presionBotonJSON() {
+         
+            var url = 'http://utnfralaboiii.azurewebsites.net/JSON';
+            //var url = 'http://localhost:1337/JSON';
+            //requestJSON.setRequestHeader("Content-Type", "text/plain");
+            requestJSON.open('POST', url, true);
+            requestJSON.onreadystatechange = procesarJSON;
+            //request.send(myJSONArray);
+            requestJSON.send(JSON.stringify(myJSONArray));
+
+        }
+
+        function procesarPost() {
+
+            var posts = document.getElementById("Posts");
+            if (request.readyState == 4) {
+                posts.innerHTML = request.responseText;
+            }
+            else {
+                posts.innerHTML = 'Cargando...';
+            }
+        }
+
+        function procesarJSON() {
+
+            var JSONDIV = document.getElementById("JSON");
+            if (requestJSON.readyState == 4) {
+                var JSONResponseObject = JSON.parse(requestJSON.responseText);
+                var JSONResponseBodyObject = JSON.parse(JSONResponseObject.body);
+                var txt="";
+                txt += "<table border='1'>"
+                for (x in JSONResponseBodyObject) {
+                    txt += "<tr><td>" + JSONResponseBodyObject[x].nombre + "</td></tr>";
+                }
+                txt += "</table>"
+                JSONDIV.innerHTML = txt;
+            }
+            else {
+                JSONDIV.innerHTML = 'Cargando...';
+            }
+        }
+
+    </script>
+</body>
+</html>
