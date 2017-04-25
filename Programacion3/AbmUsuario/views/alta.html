@@ -1,24 +1,21 @@
-<div>
-    <form action="server.php" method="POST" enctype="multipart/form-data">
-        <table class="menuTable">
-            <tr>
-                <td><label for="txtLegajo">Nombre: </label></td>
-                <td><input type="text" name="txtLegajo" placeholder="Ingrese n° Legajo"></td>
-            </tr>
-            <tr>
-                <td><label for="txtNombre">Nombre: </label></td>
-                <td><input type="text" name="txtNombre" id="" placeholder="Ingrese Nombre"></td>
-            </tr>
-            <tr>
-                <td><label for="txtDni">Nombre: </label></td>
-                <td><input type="text" name="txtDni" id="" placeholder="Ingrese Dni"></td>
-            </tr>
-            <tr>
-                <td><input type="file"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="CARGAR EMPLEADO"></td>
-            </tr>
-        </table>
-    </form>
+<div class="form-group">
+    <div class="userTableBackground">
+        <form action="server.php" method="POST" enctype="multipart/form-data">
+                    <label for="txtLegajo">Legajo: </label>
+                    <input class="form-control" type="text" name="txtLegajo" placeholder="Ingrese n° Legajo">
+                    <label for="txtNombre">Nombre: </label>
+                    <input class="form-control" type="text" name="txtNombre" id="" placeholder="Ingrese Nombre"></td>
+                    <label for="txtDni">Apellido: </label></td>
+                    <input class="form-control" type="text" name="txtDni" id="" placeholder="Ingrese Apellido"></td>
+                    <label for="txtDni">Dni: </label></td>
+                    <input class="form-control" type="text" name="txtDni" id="" placeholder="Ingrese Dni"></td>
+                    <label for="txtDni">Sexo: </label></td>
+                    <input class="form-control" type="text" name="txtDni" id="" placeholder="Ingrese Dni"></td>
+                    <label for="txtDni">Nombre: </label></td>
+                    <input class="form-control" type="text" name="txtDni" id="" placeholder="Ingrese Dni"></td>
+
+                    <input class="form-control" type="file"></td>
+                    <input class="form-control" type="submit" value="CARGAR EMPLEADO">
+        </form>
+    </div>
 </div>

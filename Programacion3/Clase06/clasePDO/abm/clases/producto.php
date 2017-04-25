@@ -99,16 +99,13 @@ class Producto
 		return $ListaDeProductosLeidos;
 		
 	}
-//--------------------------------------------------------------------------------//
 
-function TraerTodosLosProductosDB()
-{
-	$PDOObject = AccesoDatos::DameUnObjetoAcceso();
-	$consulta = $PDOObject->RetornarConsulta('SELECT codigo_barra AS codBarra, nombre AS nombre, path_foto AS pathFoto FROM producto');
-
-	$consulta->execute();
-
-	return $productos = $consulta->fetchAll(PDO::FETCH_CLASS,"Producto");
-}
+	function TraerTodosLosProductosDB()
+	{
+		$PDOObject = AccesoDatos::DameUnObjetoAcceso();
+		$consulta = $PDOObject->RetornarConsulta('SELECT codigo_barra AS codBarra, nombre AS nombre, path_foto AS pathFoto FROM producto');
+		$consulta->execute();
+		return $productos = $consulta->fetchAll(PDO::FETCH_CLASS,"Producto");
+	}
 
 }
