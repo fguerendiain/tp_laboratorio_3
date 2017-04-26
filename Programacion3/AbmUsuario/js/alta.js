@@ -7,20 +7,23 @@ function AgregarUsuario(){
     var formDni = $('#txtDni').val();
     var formPath_foto = $('#filePerfil').val();
 
-    $.ajax({
-        url: '../AbmUsuario/server/administracion.php',
-        type: 'POST',
-        data: { 
+    datos = { 
             legajo: formLegajo,
             nombre: formNombre,
             apellido: formApellido,
             sexo: formSexo,
             dni: formDni,
             path_foto: formPath_foto
-        },
+        };
+
+    $.ajax({
+        url: '../AbmUsuario/server/administracion.php',
+        type: 'POST',
+        data: datos,
         dataType: 'text',
         success: function (data) {
-                $("#actualView").html('<h1>'+data+'</h1>');
+            alert("andooo");
+                $("#actualView").html('<h1>HOLA '+data+'</h1>');
                 }
     }).fail(function() {
         alert("No se pudo mandar nada");

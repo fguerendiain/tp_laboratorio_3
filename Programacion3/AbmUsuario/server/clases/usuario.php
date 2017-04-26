@@ -1,5 +1,5 @@
 <?php
-    require_once('../AccesoDatos.php');
+    include_once("../AccesoDatos.php");
 
     class Usuario
     {
@@ -20,7 +20,7 @@
             if($sexo == Null)return;
             if($dni == Null)return;
             if($fotoPath == Null)return;
-
+            
             $this->_legajo = $legajo;
             $this->_nombre = $nombre;
             $this->_apellido = $apellido;
