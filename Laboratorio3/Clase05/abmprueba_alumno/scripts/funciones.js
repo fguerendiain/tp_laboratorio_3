@@ -48,6 +48,7 @@ function subirFoto() {
     })
         .done(function (objJson) {
             if (processData == true) { // completar
+                $("#divFoto").html('<img src="'+objJson.destino+'></img>');
                 alert(objJson.Mensaje);
                 return;
             
@@ -107,6 +108,11 @@ function agregarProducto() {
     producto.nombre = nombre;
     producto.codBarra = codBarra;
     producto.archivo = archivo;
+
+    if(codBarra == NaN) return;
+    if(nombre == "") return;
+    if(archivo === "") return;
+    
 
        // validar campos...
 

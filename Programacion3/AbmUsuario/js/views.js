@@ -5,7 +5,6 @@ $(document).ready(function()
     var bajaURL = "../AbmUsuario/views/baja.html";
     var modificacionURL = "../AbmUsuario/views/modificacion.html";
 
-
     $("#menuButtonAlta").click(function(){
         $("#actualView").load(altaURL)
         });
@@ -17,5 +16,4 @@ $(document).ready(function()
     $("#menuButtonModif").click(function(){
         $("#actualView").load(modificacionURL)
         });
-
 });
