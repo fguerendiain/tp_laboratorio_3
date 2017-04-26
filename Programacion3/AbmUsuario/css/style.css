@@ -1,5 +1,5 @@
 body{
-    background-color: #212121;
+    background-color: #000000;
     
 }
 
@@ -21,12 +21,13 @@ body{
     margin-top: 20px;
     margin-bottom: 20px;
     padding-bottom: 5px;
-    background-color: #959595;
+    background-color: #212121;
     border-radius: 10px; 
     
 }
 
 .lableButton{
+    color: #FFFFFF;
     margin: 0 auto;
     text-align: center;}
 
@@ -51,14 +52,15 @@ body{
 .footer{
     background-color:darkred; 
     color: #ffffff;
-
-    position: absolute;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 16px;
+    height: 155px; /* .push must be the same height as .footer */
+    position: relative;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 1rem;
-
-
+    padding: 40px 30px;
 }
 
 .userTableBackground{

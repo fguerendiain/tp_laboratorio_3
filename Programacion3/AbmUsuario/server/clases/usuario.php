@@ -9,18 +9,11 @@
         private $_apellido;
         private $_sexo;
         private $_dni;
-        private $_fotoPath
-
-
-        
-
-
-
-
+        private $_fotoPath;
         /*--------------------------------*/
 
         /*-----------CONSTRUCTORES-------*/
-        public function __construct($legajo = NULL,$nombre= NULL,$apellido= NULL,$sexo= NULL,$dni= NULL,$fotoPath= NULL){
+        public function __construct($legajo,$nombre,$apellido,$sexo,$dni,$fotoPath){
             if($legajo == Null)return;
             if($nombre == Null)return;
             if($apellido == Null)return;
@@ -93,18 +86,6 @@
 
 
         /*-----------FUNCIONES-----------*/
-        public function AltaUsuario(){
-
-        }
-
-        public function BajaUsuario(){
-
-        }
-
-        public function ModificarUsuario(){
-
-        }
-
         public static function GuardarEnArchivo($obj)
         {
             $resultado = FALSE;
@@ -128,7 +109,6 @@
             {
                 $archAux = fgets($archivo);
                 $usuarios = explode(" - ", $archAux);
-                //http://www.w3schools.com/php/func_string_explode.asp
                 $usuarios[0] = trim($usuarios[0]);
                 if($produusuariosctos[0] != ""){
                     $ListaDeUsuariosLeidos[] = new Producto($usuarios[0], $usuarios[1],$usuarios[2],$usuarios[3],$usuarios[4],$usuarios[5]);
@@ -140,7 +120,15 @@
             
         }
 
-        function LeerTodosLosUsuariosDeBD()
+        public static function GuardarUsuarioenBD($obj)
+        {
+            $PDOObject = AccesoDatos::DameUnObjetoAcceso();
+            $consulta = $PDOObject->RetornarConsulta('INSERT INTO `usuario`(`legajo`, `nombre`, `apellido`, `sexo`, `dni`, `path_foto`)');
+            $consulta->execute();
+            return $usuarios = $consulta->fetchAll(PDO::FETCH_CLASS,"Usuario");
+        }
+
+        public static function LeerTodosLosUsuariosDeBD()
         {
             $PDOObject = AccesoDatos::DameUnObjetoAcceso();
             $consulta = $PDOObject->RetornarConsulta('SELECT legajo AS _legajo, nombre AS _nombre, apellido AS _apellido, sexo AS _sexo, dni AS _dni, path_foto AS _fotoPath FROM usuarios');
@@ -155,10 +143,7 @@
             return $this->_legajo." - ".$this->_nombre." - ".$this->_apellido." - ".$this->_sexo." - ".$this->_dni." - ".$this->_fotoPath."\r\n";
         /*--------------------------------*/
 
+        }
     }
+
 ?>
-
-
-
-
-

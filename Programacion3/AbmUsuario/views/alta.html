@@ -1,36 +1,34 @@
 <div class="userTableBackground">
-    <form action="server.php" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="txtLegajo">Legajo: </label>
-            <input class="form-control" type="text" id="txtLegajo" placeholder="Ingrese n° Legajo">
+    <div class="form-group">
+        <label for="txtLegajo">Legajo: </label>
+        <input class="form-control" type="text" id="txtLegajo" placeholder="Ingrese n° Legajo">
+    </div>
+    <div class="form-group">
+        <label for="txtNombre">Nombre: </label>
+        <input class="form-control" type="text" id="txtNombre" placeholder="Ingrese Nombre">
+    </div>
+    <div class="form-group">
+        <label for="txtApellido">Apellido: </label>
+        <input class="form-control" type="text" id="txtApellido" placeholder="Ingrese Apellido">
+    </div>
+    <div class="form-group">
+        <label>Sexo: </label>
+        <div class="radio">
+            <label><input type="radio" name="rdSexo" value="m"> Masculino</label>
         </div>
-        <div class="form-group">
-            <label for="txtNombre">Nombre: </label>
-            <input class="form-control" type="text" id="txtNombre" placeholder="Ingrese Nombre">
+        <div class="radio">
+            <label><input type="radio" name="rdSexo" value="f"> Femenino</label>
         </div>
-        <div class="form-group">
-            <label for="txtApellido">Apellido: </label>
-            <input class="form-control" type="text" id="txtApellido" placeholder="Ingrese Apellido">
-        </div>
-        <div class="form-group">
-            <label>Sexo: </label>
-            <div class="radio">
-                <label><input type="radio" name="rdSexo"> Masculino</label>
-            </div>
-            <div class="radio">
-                <label><input type="radio" name="rdSexo"> Femenino</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="txtDni">Dni: </label>
-            <input class="form-control" type="text" id="txtDni" placeholder="Ingrese Dni">
-        </div>
-        <div class="form-group">
-            <label>Foto de Perfil: </label>
-            <input class="form-control" type="file">
-        </div>
-        <div class="form-group">
-            <input class="btn btn-info" type="submit" value="CARGAR EMPLEADO">
-        </div>
-    </form>
+    </div>
+    <div class="form-group">
+        <label for="txtDni">Dni: </label>
+        <input class="form-control" type="text" id="txtDni" placeholder="Ingrese Dni">
+    </div>
+    <div class="form-group">
+        <label>Foto de Perfil: </label>
+        <input class="form-control" type="file" id="filePerfil" accept="image/*">
+    </div>
+    <div class="form-group">
+        <input class="btn btn-default" type="button" id="submitAlta" value="Agregar Usuario" onclick="AgregarUsuario()">
+    </div>
 </div>
