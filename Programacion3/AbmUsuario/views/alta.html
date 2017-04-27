@@ -14,7 +14,7 @@
     <div class="form-group">
         <label>Sexo: </label>
         <div class="radio">
-            <label><input type="radio" name="rdSexo" value="m"> Masculino</label>
+            <label><input type="radio" name="rdSexo" checked="checked" value="m"> Masculino</label>
         </div>
         <div class="radio">
             <label><input type="radio" name="rdSexo" value="f"> Femenino</label>
@@ -25,10 +25,11 @@
         <input class="form-control" type="text" id="txtDni" placeholder="Ingrese Dni">
     </div>
     <div class="form-group">
-        <label>Foto de Perfil: </label>
-        <input class="form-control" type="file" id="filePerfil" accept="image/*">
+        <label>Foto de Perfil: </label><br>
+        <img src="#" class="img-thumbnail" id="fotoPreview" width="100" height="100" style='display:none;'>
+        <input class="form-control" type="file" id="filePerfil" accept="image/*" onchange="readURL(this)">
     </div>
     <div class="form-group">
-        <input class="btn btn-default" type="button" id="submitAlta" value="Agregar Usuario" onclick="AgregarUsuario()">
+        <input class="btn btn-default" type="button" id="submitAlta" value="Agregar Usuario" onclick="ValidarFormulario()">
     </div>
 </div>

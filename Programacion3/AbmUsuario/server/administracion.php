@@ -11,13 +11,13 @@
 */
 //    $auxUser = new Usuario();
 
-    $auxUser = new Usuario(123,"Mariano","Pestillo","m",31917440,"foto.jpg")
-
-    if($auxUser)
-    {
-        var_dump($auxUser);
-        echo("No el Objeto");
-    }
+ //   $auxUser = new Usuario(123,"Mariano","Pestillo","m",31917440,"foto.jpg")
+//
+ //   if($auxUser)
+ //   {
+ //       var_dump($auxUser);
+ //       echo("No el Objeto");
+ //   }
 
 
 
