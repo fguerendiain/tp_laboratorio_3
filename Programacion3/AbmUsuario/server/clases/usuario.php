@@ -1,5 +1,5 @@
 <?php
-    include_once("../AccesoDatos.php");
+    include_once("../../AccesoDatos.php");
 
     class Usuario
     {
@@ -111,7 +111,7 @@
                 $usuarios = explode(" - ", $archAux);
                 $usuarios[0] = trim($usuarios[0]);
                 if($produusuariosctos[0] != ""){
-                    $ListaDeUsuariosLeidos[] = new Producto($usuarios[0], $usuarios[1],$usuarios[2],$usuarios[3],$usuarios[4],$usuarios[5]);
+                    $ListaDeUsuariosLeidos[] = new Usuario($usuarios[0], $usuarios[1],$usuarios[2],$usuarios[3],$usuarios[4],$usuarios[5]);
                 }
             }
             fclose($archivo);

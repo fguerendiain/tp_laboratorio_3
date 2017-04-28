@@ -22,7 +22,6 @@ function ValidarFormulario()
     var formDni = $('#txtDni').val();
     var formPath_foto = $('#filePerfil').val();
 
-
     var flag = true;
     var flagLegajo = true;
     var flagNombre = true;
@@ -36,12 +35,12 @@ function ValidarFormulario()
         flagLegajo = false;
     }
   //Valido que el nombre solo contenga letras
-    if(!/^[a-z][a-z]*/.test(formNombre)){
+    if(!/^[a-z][A-Z]*/.test(formNombre)){
         flag = false; 
         flagNombre = false;
     }
   //Valido que el apellido solo contenga letras
-    if(!/^[a-z][a-z]*/.test(formApellido)){
+    if(!/^[a-z][A-Z]*/.test(formApellido)){
         flag = false; 
         flagApellido = false;
     }
@@ -94,10 +93,3 @@ function ValidarFormulario()
         alert("No se pudo mandar nada");
     })
 }
-
-//$('#filePerfil').change(function(){
-//    $('#fotoPreview').attr("src",$('#filePerfil').val());
-//    $('#fotoPreview').attr("style","'display:inline;'");
-//});
-
-
