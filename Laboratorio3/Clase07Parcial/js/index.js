@@ -1,20 +1,26 @@
 $("#document").ready(function(){
 
+
     $("#addPost").click(function(){
-        var urlParameter = getParameterByName();
+      //  var urlParameter = getParameterByName();
+        var autor = "franco";
         var titulo = $("#postTitle").val(); 
         var contenido = $("#postContent").val(); 
 
-        var datosPost = {
+  /*      var datosPost = {
             "title": titulo,
             "header": urlParameter.textheader,
             "posttext": contenido,
             "author" : urlParameter.author
         }
 
+*/
         $("#postview").html("<img src='image/126.gif'>");
 
-        $.ajax({
+
+        $("#postview").html('<ul><li>'+autor+'</li><li>'+titulo+'</li><li>'+contenido+'</li></ul>');
+
+/*        $.ajax({
         url:'http://localhost:1337/postearNuevaEntrada',
         type:'POST',
         dataType: "json",
@@ -25,9 +31,9 @@ $("#document").ready(function(){
         {
 
         }
-        })
+        })*/
     })
-})
+});
 
 function getParameterByName(name, url) {
             if (!url) url = window.location.href;
