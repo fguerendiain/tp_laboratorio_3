@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="alta.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>AGREGAR CONTAINER</h1>
+    <form action="ConteinerAlta.php" method="POST">
+        <label for="paisText">Pais: </label>
+        <input type="text" name="pais" id="paisText" placeholder="Ingrese Pais">
+        <br>
+        <label for="edadText">Descripcion: </label>
+        <input type="text" name="descripcion" id="descripcionText" placeholder="Ingrese Descripcion">
+        <br>
+        <br>
+        <label>Foto de Perfil: </label><br>
+        <br>
+        <img src="#" id="fotoPreview" width="100" height="100">
+        <br>
+        <input type="file" id="filePerfil" accept="image/*" onchange="readURL(this)">
+        <br>
+        <input type="submit" name="btnEnviarCont" value="Enviar">
+    </form>
+
+</body>
+</html>
