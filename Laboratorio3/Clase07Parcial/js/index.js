@@ -1,12 +1,17 @@
-$("#document").ready(function(){
+$(document).ready(function(){
+
+
+    $("#btnlogout").click(function(){
+        localStorage.removeItem("user");
+        window.location.replace("login.html");
+    });
 
 
     $("#addPost").click(function(){
-      //  var urlParameter = getParameterByName();
-        var autor = "franco";
-        var titulo = $("#postTitle").val(); 
-        var contenido = $("#postContent").val(); 
-
+        var urlParameter = getParameterByName();
+    });
+});
+ 
   /*      var datosPost = {
             "title": titulo,
             "header": urlParameter.textheader,
@@ -15,10 +20,10 @@ $("#document").ready(function(){
         }
 
 */
-        $("#postview").html("<img src='image/126.gif'>");
+ //       $("#postview").html("<img src='image/126.gif'>");
 
 
-        $("#postview").html('<ul><li>'+autor+'</li><li>'+titulo+'</li><li>'+contenido+'</li></ul>');
+  //      $("#postview").html('<ul><li>'+autor+'</li><li>'+titulo+'</li><li>'+contenido+'</li></ul>');
 
 /*        $.ajax({
         url:'http://localhost:1337/postearNuevaEntrada',
@@ -32,8 +37,6 @@ $("#document").ready(function(){
 
         }
         })*/
-    })
-});
 
 function getParameterByName(name, url) {
             if (!url) url = window.location.href;

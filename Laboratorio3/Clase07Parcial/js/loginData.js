@@ -1,16 +1,22 @@
-$("#document").ready(function(){
+$(document).ready(function(){
 
-        $("#btnEnviar").click(function(){   
+    if(localStorage.getItem("user"))
+    {
+        var mail = localStorage.getItem("user");
+        window.location.replace("index.html?autor="+mail+"&fuente=verdana&color=blue");
+    }
+
+    $("#btnEnviar").click(function(){   
     
-    var mail = $('email').val();
+    var mail = $('#email').val();
     var pass = $('#pass').val();
 
-    var datosLogin = {email:mail, password:pass}
+ //   var datosLogin = {email:mail, password:pass}
+    localStorage.setItem("user",mail);    
+    window.location.replace("index.html?autor="+mail+"&fuente=verdana&color=blue");
 
-//            window.location.replace("./index.html?autor=franco&fuente=verdana&color=blue");
 
-
-    $.ajax({
+/*    $.ajax({
         url:'http://localhost:1337/login',
         type:'POST',
         dataType: "JSON",
@@ -22,4 +28,4 @@ $("#document").ready(function(){
             window.location.replace("../index.html?autor="+data.author+"&fuente="+data.font+"&color="+data.color);
         }
     })
-})});
+*/})});
