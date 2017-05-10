@@ -16,5 +16,5 @@
 
     echo("HOLA<br><br>");
 
-    echo("<br>".$auxUser->ToString()."<br>");
+//    echo("<br>".$auxUser->ToString()."<br>");
 ?>

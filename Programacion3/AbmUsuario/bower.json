@@ -1,0 +1,21 @@
+{
+  "name": "AbmUsuario",
+  "homepage": "https://github.com/fguerendiain/Tp_laboratorio_3",
+  "authors": [
+    "Franco Guerendiain <fguerendiain@gmail.com>"
+  ],
+  "description": "Desarrollo de prueba para avanzar en el aprendizaje de cursada de Programacion Y Laboratorio 3 del 3er cuatrimestre",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrapvalidator": "^0.5.3"
+  }
+}
