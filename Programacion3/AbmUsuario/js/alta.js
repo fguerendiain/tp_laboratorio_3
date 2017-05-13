@@ -14,7 +14,6 @@ function readURL(input) {
 
 function ValidarFormulario()
 {
-
     var formLegajo = $('#txtLegajo').val();
     var formNombre = $('#txtNombre').val();
     var formApellido = $('#txtApellido').val();
@@ -93,3 +92,5 @@ function ValidarFormulario()
         alert("No se pudo mandar nada");
     })
 }
+
+

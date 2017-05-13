@@ -24,6 +24,9 @@
 <body>
     <div class="container">
         <h3 class="mainTitle">ADMINISTRADOR DE USUARIOS</h3>
+        <!--LogOut Provisorio-->
+        <button id="btnLogOut" class="btn btn-primary">Log Out</button>
+        <!--LogOut Provisorio-->
         <div class="menuBackground">
             <div class="row">
                 <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><label>ALTA</label></div>
@@ -35,30 +38,30 @@
                 <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><img id="menuButtonBaja" class="img-responsive img-circle menuButton" src="img/bajaButton.jpg"></div>
                 <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><img id="menuButtonModif" class="img-responsive img-circle menuButton" src="img/modifButton.jpg"></div>
             </div>
-            <div id="actualView">
-                <div class="userTableBackground"> <!--CONTENIDO DINAMICO-->
-                    <div id="loginModal" class="modal fade">
+                <div id="loginModal" class="modal fade">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title">Ingreso</h2>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="txtUsuario">Usuario: </label>
-                                <input class="form-control" type="text" id="txtUsuario" placeholder="Ingrese Nombre de Usuario">
+                            <div class="modal-header">
+                                <h2 class="modal-title">Ingreso</h2>
                             </div>
-                            <div class="form-group">
-                                <label for="txtPassword">Password: </label>
-                                <input class="form-control" type="password" id="txtPassword" placeholder="Ingrese Contraseña">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="txtUsuario">Usuario: </label>
+                                    <input class="form-control" type="text" id="txtUsuario" name="txtUsuarioCtrlName" placeholder="Ingrese Nombre de Usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtPassword">Password: </label>
+                                    <input class="form-control" type="password" id="txtPassword" name="txtPasswordCtrlName" placeholder="Ingrese Contraseña">
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button id="btnSingIn" class="btn btn-primary">Sing In</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button id="btnSingIn" class="btn btn-primary">Sing In</button>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                </div>
+            <div id="actualView">
+                <div class="userTableBackground"> <!--CONTENIDO DINAMICO-->
                 </div>
             </div>
         </div>
