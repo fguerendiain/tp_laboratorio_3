@@ -10,9 +10,9 @@
 
     $auxUser = new Usuario($reqLegajo,$reqNombre,$reqApellido,$reqSexo,$reqDni,$reqPath_foto);
 //    if(Usuario::GuardarEnArchivo($auxUser))
-    {
-        echo("Se guardo el archivo<br><br>")
-    }
+//    {
+        echo("Se guardo el archivo<br><br>");
+//    }
 
     echo("HOLA<br><br>");
 

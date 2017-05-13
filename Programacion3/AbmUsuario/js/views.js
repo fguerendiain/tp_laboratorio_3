@@ -6,12 +6,20 @@ $(document).ready(function()
     var bajaURL = "../AbmUsuario/views/baja.html";
     var modificacionURL = "../AbmUsuario/views/modificacion.html";
 
-
+/*
+**
+**  FUNCIONALIDADES DE INICIO
+**
+**
+*/
 
     // por defecto al cargar la pagina
     // muestra el modal con el login
     MostrarModalLogin();
     ValidarLoginConBootstrap();
+
+
+
 
     //si encuentra informacion en el localstorage,
     //la valida y de ser correcta omite el login
@@ -25,17 +33,27 @@ $(document).ready(function()
 
 
 
+
     //al precionar SingIn valida los datos ingresados
     $("#btnSingIn").click(function(){   
-    
-        var user = $('#txtUsuario').val();
-        var pass = $('#txtPassword').val();
 
-        localStorage.setItem("user",user);    
-        localStorage.setItem("passw",pass);    
+        loginConValoresDeUsuario();
 
-        validarUsuario(user,pass);
     });
+
+    //al precionar ENTER en cualquier campo del
+    //formulario de login valida los datos ingresados
+    $('#txtUsuarioLogin').keypress(function(e){
+        if(e.which == 13){
+            loginConValoresDeUsuario();
+        }
+    });
+    $('#txtPasswordLogin').keypress(function(e){
+        if(e.which == 13){
+            loginConValoresDeUsuario();
+        }
+    });
+
 
 
 
@@ -50,11 +68,21 @@ $(document).ready(function()
     });
 
 
+
+
+/*
+**
+**  INTERCAMBIO DE VISTAS
+**
+**
+*/
+
     //Inyecta la vista de Alta al precionar el boton
     $("#menuButtonAlta").click(function(){
-        $("#actualView").load(altaURL)
-            .ready(ValidarAltaConBootstrap());
+        $("#actualView").load(altaURL);
+        $("#actualView").ready(ValidarAltaConBootstrap());
     });
+
 
 
 
@@ -65,11 +93,14 @@ $(document).ready(function()
 
 
 
+
     //MuInyecta la vista de Modificar al precionar el boton
     $("#menuButtonModif").click(function(){
         $("#actualView").load(modificacionURL);
     });
-    
+
+
+
 
 /*
 **
@@ -77,7 +108,6 @@ $(document).ready(function()
 **
 **
 */
-
 
     //Despliega el modal de Login
     function MostrarModalLogin(){
@@ -88,14 +118,34 @@ $(document).ready(function()
     }
 
 
+
+
+    //Tomas los datos ingresados por el usuario y los carga en localstorage
+    function loginConValoresDeUsuario(){
+        var user = $('#txtUsuarioLogin').val();
+        var pass = $('#txtPasswordLogin').val();
+
+        localStorage.setItem("user",user);    
+        localStorage.setItem("passw",pass);    
+
+        validarUsuario(user,pass);
+    }
+
+
+
+
     //valida los datos de loguin (al momento harcodeados)
     function validarUsuario(user, pass){
     //    alert("entro a validar");
         if(user == "hola" && pass == "hola")
         {
             $('#loginModal').modal("hide");
+        }else
+        {
+            alert("Usuario y clave incorrecto");
         }
     }
+
 
 
 
@@ -129,6 +179,7 @@ $(document).ready(function()
             }
         });
     }
+
 
 
 
@@ -184,5 +235,4 @@ $(document).ready(function()
             }
         });
     }
-
 });

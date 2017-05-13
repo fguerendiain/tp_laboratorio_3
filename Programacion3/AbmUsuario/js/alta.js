@@ -1,3 +1,4 @@
+//Lee la url de la imagen y la muestra como vista previa
 function readURL(input) {
 
     if (input.files && input.files[0]) {
@@ -12,6 +13,18 @@ function readURL(input) {
     }
 }
 
+
+
+
+/*
+**
+**  FUNCIONES
+**
+**
+*/
+
+// Valida los datos del formulario y envia
+// por POST los mismos al servidor
 function ValidarFormulario()
 {
     var formLegajo = $('#txtLegajo').val();
@@ -28,35 +41,35 @@ function ValidarFormulario()
     var flagDni = true;
     var flagFoto = true;
 
-  //Valido que el legajo solo contenga numeros
+  //Valida que el legajo solo contenga numeros
     if(!/^([0-9])*$/.test(formLegajo)){
         flag = false; 
         flagLegajo = false;
     }
-  //Valido que el nombre solo contenga letras
+  //Valida que el nombre solo contenga letras
     if(!/^[a-z][A-Z]*/.test(formNombre)){
         flag = false; 
         flagNombre = false;
     }
-  //Valido que el apellido solo contenga letras
+  //Valida que el apellido solo contenga letras
     if(!/^[a-z][A-Z]*/.test(formApellido)){
         flag = false; 
         flagApellido = false;
     }
 
-    //Valido que el dni solo contenga numeros
+    //Valida que el dni solo contenga numeros
     if(!/^([0-9])*$/.test(formDni)){
         flag = false; 
         flagDni = false;
     }
 
-    //Valido que el path de la imagen no este vacio
+    //Valida que el path de la imagen no este vacio
     if(formPath_foto === ""){
         flag = false; 
         flagFoto = false;
     }
 
-    //Informo por Alert los campos que no se ajustan a las validaciones
+    //Informa por Alert los campos que no se ajustan a las validaciones
     if(!flag){
         var cadena = "Los siguientes datos son incorrectos:\n";
 
@@ -69,21 +82,23 @@ function ValidarFormulario()
         alert(cadena);
         return;
     }
+
+    //Arma un json con los datos y los envia al servidor
     alert("BOTOOOON");
     datos = { 
-            legajo: formLegajo,
-            nombre: formNombre,
-            apellido: formApellido,
-            sexo: formSexo,
-            dni: formDni,
-            path_foto: formPath_foto
+            'legajo': formLegajo,
+            'nombre': formNombre,
+            'apellido': formApellido,
+            'sexo': formSexo,
+            'dni': formDni,
+            'path_foto': formPath_foto
         };
 
     $.ajax({
-        url: '../AbmUsuario/server/administracion.php',
+        url: './AbmUsuario/server/administracion.php',
         type: 'POST',
         data: datos,
-        dataType: 'text',
+        dataType: 'json',
         success: function (data) {
             alert("andooo");
                 $("#actualView").html('<h1>HOLA '+data+'</h1>');
@@ -92,5 +107,3 @@ function ValidarFormulario()
         alert("No se pudo mandar nada");
     })
 }
-
-
