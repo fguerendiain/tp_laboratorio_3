@@ -85,20 +85,24 @@ function ValidarFormulario()
 
     //Arma un json con los datos y los envia al servidor
     alert("BOTOOOON");
-    datos = { 
-            'legajo': formLegajo,
-            'nombre': formNombre,
-            'apellido': formApellido,
-            'sexo': formSexo,
-            'dni': formDni,
-            'path_foto': formPath_foto
-        };
+
+    var datosForm={ 
+            legajo: formLegajo,
+            nombre: formNombre,
+            apellido: formApellido,
+            sexo: formSexo,
+            dni: formDni,
+            path_foto: formPath_foto
+    };
+
+    var datosAjax = JSON.stringify(datosForm);    
+    alert(datosAjax);
 
     $.ajax({
-        url: './AbmUsuario/server/administracion.php',
+        url: 'server/administracion.php',
         type: 'POST',
-        data: datos,
-        dataType: 'json',
+        data: datosAjax,
+        dataType: "json",
         success: function (data) {
             alert("andooo");
                 $("#actualView").html('<h1>HOLA '+data+'</h1>');
