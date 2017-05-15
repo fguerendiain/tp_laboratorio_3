@@ -1,39 +1,23 @@
 <?php
     include_once("clases/usuario.php");
 
-    $reqLegajo = $_POST["legajo"];
-    $reqNombre = $_POST["nombre"];
-    $reqApellido = $_POST["apellido"];
-    $reqSexo = $_POST["sexo"];
-    $reqDni = $_POST["dni"];
-    $reqPath_foto = $_POST["path_foto"];
-/*
+    $input = json_decode(file_get_contents('php://input'));
+
+    $reqLegajo = $input->legajo;
+    $reqNombre = $input->nombre;
+    $reqApellido = $input->apellido;
+    $reqSexo = $input->sexo;
+    $reqDni = $input->dni;
+    $reqPath_foto = $input->path_foto;
+
     $auxUser = new Usuario($reqLegajo,$reqNombre,$reqApellido,$reqSexo,$reqDni,$reqPath_foto);
     if(Usuario::GuardarEnArchivo($auxUser))
     {
-        echo("Se guardo el archivo<br><br>");
+      //  echo("Se guardo el archivo");
     }
 
-    echo("HOLA<br><br>");
-*/
-    $respuestaArray = new stdClass();
+    $response = json_encode(array('vehiculo' => 'auto','marca'=>'ford','modelo'=>'hatchback'));
 
+    echo($response);
 
-    $respuestaArray->Legajo = $reqLegajo;
-    $respuestaArray->Nombre = $reqNombre;
-    $respuestaArray->Apellido = $reqApellido;
-    $respuestaArray->Sexo = $reqSexo;
-    $respuestaArray->Dni = $reqDni;
-    $respuestaArray->PathFoto = $reqPath_foto;
-
-    $respuestaJson = Json_encode($respuestaArray);
-
-
-    echo $respuestaJson;
-
-
-
-//    echo("<br>".$auxUser->ToString()."<br>");
-
-//phpinfo();
 ?>

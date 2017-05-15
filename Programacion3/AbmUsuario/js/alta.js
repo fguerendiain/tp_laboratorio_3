@@ -95,19 +95,19 @@ function ValidarFormulario()
             path_foto: formPath_foto
     };
 
-    var datosAjax = JSON.stringify(datosForm);    
-    alert(datosAjax);
-
     $.ajax({
         url: 'server/administracion.php',
         type: 'POST',
-        data: datosAjax,
-        dataType: "json",
-        success: function (data) {
-            alert("andooo");
-                $("#actualView").html('<h1>HOLA '+data+'</h1>');
-                }
-    }).fail(function() {
+        data: JSON.stringify(datosForm),
+        dataType: "xml/html/script/json",
+        contentType: "application/json"
+    })
+    .done(function (data) {
+        alert("andooo");
+        $("#actualView").html('<h1>HOLA '+data+'</h1>');
+    })
+    .fail(function(e) {
         alert("No se pudo mandar nada");
+        alert(e);
     })
 }

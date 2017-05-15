@@ -1,5 +1,5 @@
 <?php
-    include_once("../../AccesoDatos.php");
+    include_once("../server/AccesoDatos.php");
 
     class Usuario
     {
@@ -90,7 +90,7 @@
         {
             $resultado = FALSE;
             
-            $ar = fopen("../../archivos/usuarios.txt", "a");
+            $ar = fopen("../archivos/usuarios.txt", "a");
             $cant = fwrite($ar, $obj->ToString());
             if($cant > 0)
             {
@@ -104,7 +104,7 @@
         {
 
             $ListaDeUsuariosLeidos = array();
-            $archivo=fopen("../../archivos/usuarios.txt", "r");
+            $archivo=fopen("../archivos/usuarios.txt", "r");
             while(!feof($archivo))
             {
                 $archAux = fgets($archivo);
