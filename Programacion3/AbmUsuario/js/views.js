@@ -79,8 +79,8 @@ $(document).ready(function()
 
     //Inyecta la vista de Alta al precionar el boton
     $("#menuButtonAlta").click(function(){
-        $("#actualView").load(altaURL);
-        $("#actualView").ready(ValidarAltaConBootstrap());
+        $("#actualView").load(altaURL)
+        .ready(ValidarAltaConBootstrap());
     });
 
 
