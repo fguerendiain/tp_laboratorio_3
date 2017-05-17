@@ -1,31 +1,45 @@
 $(document).ready(function(){
 
-    if(localStorage.getItem("user"))
-    {
-        var mail = localStorage.getItem("user");
-        window.location.replace("index.html?autor="+mail+"&fuente=verdana&color=blue");
-    }
+    $('#loginmodal-container').bootstrapValidator({
+
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+        fields: {
+            emailCtrl: {
+                validators: {
+                    emailAddress: {
+                        message: 'El correo electronico no es valido'
+                        }
+                    }
+                }
+            },
+    });
 
     $("#btnEnviar").click(function(){   
     
-    var mail = $('#email').val();
-    var pass = $('#pass').val();
+            var mail = $('#email').val();
+            var pass = $('#pass').val();
 
- //   var datosLogin = {email:mail, password:pass}
-    localStorage.setItem("user",mail);    
-    window.location.replace("index.html?autor="+mail+"&fuente=verdana&color=blue");
+            var datosLogin = {email:mail, password:pass};
 
+            $.ajax({
+                url:'http://localhost:1337/loginRecu',
+                type:'POST',
+                data: JSON.stringify(datosLogin)
+                })
+            .done(function(data){
+                if(data.autenticado == "si" && data.role == "admin")
+                {
+                    window.location.replace("../index.html?autor="+data.author+"&fuente="+data.font+"&color="+data.color);
+                }
+            })
+            .fail(function(){
+                window.location.replace("index.html?autor="+mail+"&fuente=verdana&color=blue");
+            })
 
-/*    $.ajax({
-        url:'http://localhost:1337/login',
-        type:'POST',
-        dataType: "JSON",
-        data: datosLogin
-        })
-    .done(function(data){
-        if(data.autenticado == "si")
-        {
-            window.location.replace("../index.html?autor="+data.author+"&fuente="+data.font+"&color="+data.color);
-        }
     })
-*/})});
+});

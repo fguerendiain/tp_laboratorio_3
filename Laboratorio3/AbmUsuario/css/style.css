@@ -1,0 +1,72 @@
+body{
+    background-color: #000000;
+    
+}
+
+.mainContent{
+    padding: 150px ,50px;
+
+}
+
+.mainTitle{
+    text-align: center;
+    padding-bottom: 5px;
+    padding-bottom: 5px;
+    color:#ffffff;
+
+}
+
+.menuBackground{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    background-color: #212121;
+    border-radius: 10px; 
+    
+}
+
+.lableButton{
+    color: #FFFFFF;
+    margin: 0 auto;
+    text-align: center;}
+
+.menuButton{
+    width: 100px;
+    margin: 0 auto;
+    border-color: #000000;
+    border-style: solid;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+.menuButton:hover{
+    opacity: 0.7;
+}
+
+.menuButton:active{
+    opacity: 0.2;
+}
+
+
+.footer{
+    background-color:darkred; 
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 16px;
+    height: 155px; /* .push must be the same height as .footer */
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 40px 30px;
+}
+
+.userTableBackground{
+    margin: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    background-color: #959595;
+    border-radius: 10px; 
+}

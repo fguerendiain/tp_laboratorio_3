@@ -35,7 +35,6 @@
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <input type="button" class="btn btn-primary" value="LogOut" id="btnlogout">
@@ -45,23 +44,55 @@
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
-        <div class="container">
+           <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Parcial1</h1>
+                        <h1 id="acambiarcolor">Recuperatorio Parcial1</h1>
                         <hr class="small">
-                        <span class="subheading">Parcial 1 Laboratorio3</span>
+                        <span class="subheading">Recuperatorio Parcial 1 Laboratorio3</span>
                     </div>
                 </div>
             </div>
-            <input class="btn btn-primary" type="button" id="addPost" value="Añadir Post">
-            <form>
-                <div class="form-group">
-                    <input type="text" id="postTitle" placeholder="Titulo">
-                    <input type="text" id="postContent" placeholder="Post">
+
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Añadir Contacto</button>
+
+            <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Agregar Contacto</h4>
                 </div>
-            </form>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="txtNombre">Nombre: </label>
+                        <input class="form-control" type="text" id="txtNombre" name="txtNombreCtrlName" placeholder="Ingrese Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Email: </label>
+                        <input class="form-control" type="text" id="txtEmail" name="txtEmailCtrlName" placeholder="Ingrese Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtWebSite">Pagina Web: </label>
+                        <input class="form-control" type="text" id="txtWebSite" name="txtWebSiteCtrlName" placeholder="Sitio Web">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtUbicacion">Ubicacion: </label>
+                        <input class="form-control" type="text" id="txtUbicacion" name="txtUbicacionCtrlName" placeholder="Ingrese Ubicacion">
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="ValidarFormulario()" >Agregar</button>
+                </div>
+                </div>
+
+            </div>
+            </div>
         </div>
     </header>
 

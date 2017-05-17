@@ -1,0 +1,35 @@
+<div id= "altaForm" class="userTableBackground">
+    <div class="form-group">
+        <label for="txtLegajo">Legajo: </label>
+        <input class="form-control" type="number" id="txtLegajo" name="txtLegajoCtrlName" placeholder="Ingrese n° Legajo">
+    </div>
+    <div class="form-group">
+        <label for="txtNombre">Nombre: </label>
+        <input class="form-control" type="text" id="txtNombre" name="txtNombreCtrlName" placeholder="Ingrese Nombre">
+    </div>
+    <div class="form-group">
+        <label for="txtApellido">Apellido: </label>
+        <input class="form-control" type="text" id="txtApellido" name="txtApellidoCtrlName" placeholder="Ingrese Apellido">
+    </div>
+    <div class="form-group">
+        <label>Sexo: </label>
+        <div class="radio">
+            <label><input type="radio" name="rdSexo" checked="checked" value="m"> Masculino</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="rdSexo" value="f"> Femenino</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="txtDni">Dni: </label>
+        <input class="form-control" type="number" id="txtDni" name="txtDniCtrlName" placeholder="Ingrese Dni">
+    </div>
+    <div class="form-group">
+        <label>Foto de Perfil: </label><br>
+        <img src="#" class="img-thumbnail" id="fotoPreview" width="100" height="100" style='display:none;'>
+        <input class="form-control" type="file" id="filePerfil" accept="image/*" onchange="readURL(this)">
+    </div>
+    <div class="form-group">
+        <input class="btn btn-default" type="button" id="submitAlta" value="Agregar Usuario" onclick="ValidarFormulario()">
+    </div>
+</div>

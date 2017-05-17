@@ -1,42 +1,30 @@
 $(document).ready(function(){
 
+    $("#acambiarcolor").attr("style='color:"+ getParameterByName('color')+"'");
+
 
     $("#btnlogout").click(function(){
-        localStorage.removeItem("user");
         window.location.replace("login.html");
     });
 
-
-    $("#addPost").click(function(){
-        var urlParameter = getParameterByName();
-    });
 });
  
-  /*      var datosPost = {
-            "title": titulo,
-            "header": urlParameter.textheader,
-            "posttext": contenido,
-            "author" : urlParameter.author
-        }
+function ValidarFormulario(){
+    $('#myModal').modal("hide");
+       var nom = $("#txtNombre").val();
+       var mail = $("#txtEmail").val();
+       var site = $("#txtWebSite").val();
+       var ubic = $("#txtUbicacion").val();
 
-*/
- //       $("#postview").html("<img src='image/126.gif'>");
+       var anterior = $('#postview').html();
 
-
-  //      $("#postview").html('<ul><li>'+autor+'</li><li>'+titulo+'</li><li>'+contenido+'</li></ul>');
-
-/*        $.ajax({
-        url:'http://localhost:1337/postearNuevaEntrada',
-        type:'POST',
-        dataType: "json",
-        data: datosPost
-        })
-        .done(function(data){
-        if(data.autenticado == "si")
-        {
-
-        }
-        })*/
+       $('#postview').html(anterior +
+            "<div><label>Nombre: "+nom+"</label></div>"+
+            "<div><label>Email: "+mail+"</label></div>"+
+            "<div><label>Sitio: "+site+"</label></div>"+
+            "<div><label>Direccion: "+ubic+"</label></div><br><br>"
+       );
+}
 
 function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -47,4 +35,3 @@ function getParameterByName(name, url) {
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, " "));
         }   
-

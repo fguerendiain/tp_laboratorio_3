@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheet = Bootstrap & Bootstrap Validator & Custom -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrapvalidator/dist/css/bootstrapValidator.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- -->
+
+    <!-- Scripts = JQuery & BootstrapJS & Bootstrap Validator & Custom -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
+    <script src="js/views.js"></script>
+    <script src="js/alta.js"></script>
+    <!-- -->
+
+    <title>Abm de Usuarios</title>
+
+</head>
+<body>
+    <div class="container">
+        <h3 class="mainTitle">ADMINISTRADOR DE USUARIOS</h3>
+        <!--LogOut Provisorio-->
+        <button id="btnLogOut" class="btn btn-primary">Log Out</button>
+        <!--LogOut Provisorio-->
+        <div class="menuBackground">
+            <div class="row">
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><label>ALTA</label></div>
+                <div class="col-xs-3 col-md-4 col-sm-4 lableButton"><label>BAJA</label></div>
+                <div class="col-xs-5 col-md-4 col-sm-4 lableButton"><label>MODIFICACION</label></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><img id="menuButtonAlta" class="img-responsive img-circle menuButton" src="img/altaButton.jpg"></div>
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><img id="menuButtonBaja" class="img-responsive img-circle menuButton" src="img/bajaButton.jpg"></div>
+                <div class="col-xs-4 col-md-4 col-sm-4 lableButton"><img id="menuButtonModif" class="img-responsive img-circle menuButton" src="img/modifButton.jpg"></div>
+            </div>
+                <div id="loginModal" class="modal fade">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">Ingreso</h2>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="txtUsuarioLogin">Email: </label>
+                                    <input class="form-control" type="text" id="txtUsuarioLogin" name="txtUsuarioCtrlName" placeholder="Ingrese Nombre de Usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtPasswordLogin">Password: </label>
+                                    <input class="form-control" type="password" id="txtPasswordLogin" name="txtPasswordCtrlName" placeholder="Ingrese Contraseña">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btnSingIn" class="btn btn-primary">Sing In</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div id="actualView">
+                <div class="userTableBackground"> <!--CONTENIDO DINAMICO-->
+                </div>
+            </div>
+        </div>
+    </div>
+        <footer class="footer">
+            <div class="row">
+                <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">ALUMNO: </div>
+                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11">Franco Guerendiain</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">MATERIA:</div>
+                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11">Programacion3 / Laboratorio3</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3 col-sm-2 col-md-1 col-lg-1">PROYECTO:</div>
+                <div class="col-xs-9 col-sm-10 col-md-11 col-lg-11">ABM de Usuarios</div>
+            </div>
+        </footer>
+</body>
+</html>
