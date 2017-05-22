@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="validarcliente.php" method="POST">
+        <div><label for="correo">Correo</label></div>
+        <div><input type="text" name="correo" value="<?php echo $_COOKIE['correo'];?>"></div>
+        <br>
+        <div><label for="clave">Clave</label></div>
+        <div><input type="password" name="clave"></div>
+        <br>
+        <input type="submit" value="Enviar Datos">    
+    </form> 
+</body>
+</html>
