@@ -8,7 +8,7 @@
 <body>
     <form action="validarcliente.php" method="POST">
         <div><label for="correo">Correo</label></div>
-        <div><input type="text" name="correo" value="<?php echo $_COOKIE['correo'];?>"></div>
+        <div><input type="text" name="correo" value="<?php echo($_COOKIE['correo']);?>"></div>
         <br>
         <div><label for="clave">Clave</label></div>
         <div><input type="password" name="clave"></div>

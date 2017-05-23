@@ -18,8 +18,8 @@ class Cliente
 		if($nombre !== NULL && $correo !== NULL && $edad !== NULL && $clave !== NULL){
 			$this->nombre = $nombre;
 			$this->correo = $correo;
-			$this->edad = $edad;
-			$this->$clave = $edad;
+			$this->$edad = $edad;
+			$this->$clave = $clave;
 		}
 	}
 

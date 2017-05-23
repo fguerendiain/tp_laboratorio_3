@@ -10,7 +10,7 @@ if(isset($_SESSION['registrado']))
 	require_once("Cliente.php");
 
     $PDOObject = AccesoDatos::DameUnObjetoAcceso();
-    $consulta = $PDOObject->RetornarConsulta('SELECT nombre, correo, edad, clave FROM cliente WHERE correo='.$correo.' AND clave='.$clave.'');
+    $consulta = $PDOObject->RetornarConsulta('SELECT `nombre`, `correo`, `edad`, `clave` FROM `cliente`;');
     $consulta->execute();
     $clientes = $consulta->fetchAll(PDO::FETCH_CLASS,"Cliente");
 
@@ -30,7 +30,7 @@ if(isset($_SESSION['registrado']))
 
 foreach ($clientes as $client) {
 	echo"<tr>
-			<td><a onclick='BorrarCliente($client->nombre)'>Borrar</a></td>
+			<td><input='button' value='Borrar' onclick='BorrarCliente($client->nombre)'></td>
 			<td>$client->nombre</td>
 			<td>$client->edad</td>
 			<td>$client->correo</td>

@@ -1,6 +1,7 @@
 <?php
 	require_once("AccesoDatos.php");
     include_once("Cliente.php");
+session_start();
 
     $correo = $_POST['correo'];
     $clave = $_POST['clave'];
@@ -14,8 +15,8 @@
     {
         if($client->correo == $correo && $client->clave == $clave)
             {
-            $_SESSION['registrado'] = $client->correo;
-                setcookie($client->correo);
+                $_SESSION['registrado'] = $client->correo;
+                setcookie("correo",$client->correo);
                 echo "<script language='JavaScript'>"; 
                 echo "location = 'clientelistado.php'"; 
                 echo "</script>";
