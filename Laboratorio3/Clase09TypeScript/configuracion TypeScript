@@ -1,0 +1,21 @@
+Es necesario tener instalado Node
+----------------------------------
+Instalar archivos
+    npm install -g typescript
+----------------------------------
+Traspilar a JavaScript
+
+    tsc nombreArchivo.ts
+----------------------------------
+Agregar un Watch
+
+    tsc nombreArchivo.ts -w
+
+/*
+*traspila automaticamente al guardar los cambios en el archivo)
+*Para sacar el Watch desde la misma consola se cancela con Ctrl+C
+*
+*/
+----------------------------------
+
+
