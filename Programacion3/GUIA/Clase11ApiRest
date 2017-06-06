@@ -1,0 +1,7 @@
+Averiguar uso de Slim:
+
+*Uso de CORS para ingreso desde afuera
+
+*Correcto uso de htaccess
+
+*subir archivos File mediante Slim3 por GetUploadesFile PSR7
