@@ -1,0 +1,16 @@
+USUARIO
+
+    POST verifica
+
+
+MEDICAMENTO
+    POST / alta
+    GET /   listar
+    GET ?LABORATORIO    lisatr ordenado por laboratorio
+    GET /{ID} traer medicamento por id
+    DELETE /{ID} borrar mediacmento por id
+
+
+VENTA
+    POST /
+    PUT /{ID}
